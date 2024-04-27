@@ -2,15 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core;
+using School.Core;
 using School.Enemys;
 using Sound;
 using UnityEngine;
 
 namespace School.EscapePhase
 {
-    public class EscapePhaseManager : MonoBehaviour
+    public class EscapePhaseManager : MonoBehaviour, IRegistrable
     {
-        [SerializeField] float escapeTime = 60f;
+        [SerializeField] private float escapeTime = 60f;
         
         
         private float _currentTime;
@@ -29,8 +30,10 @@ namespace School.EscapePhase
         private static readonly int Exposure = Shader.PropertyToID("_Exposure");
 
         Light directionalLight;
-        private void Start()
+        public void Start()
         {
+            escapeTime = ServiceLocator.Get<GameManager>().currentTimeToEscape;
+            
             //set references
             directionalLight = GameObject.Find("Directional Light").GetComponent<Light>();
             _doorManager = ServiceLocator.Get<DoorManager>();
@@ -38,6 +41,7 @@ namespace School.EscapePhase
             _enemyManager = ServiceLocator.Get<EnemyManager>();
             
             //trigger other managers
+            ServiceLocator.Register(this);
             ServiceLocator.Get<DoorManager>().StartGame();
             ServiceLocator.Get<DoorManager>().OnDoorOpenedEvent += ChasePhaseEnd;
             
@@ -48,11 +52,13 @@ namespace School.EscapePhase
             //set up the ambience
             _stopSound = ServiceLocator.Get<SoundPlayer>().PlayUntilStopped("Chill", true);
             AmbienceChange(true);
+            
         }
         
         
         void Update()
         {
+            if (_doorManager == null || _announcer == null || _enemyManager == null) { return; }
             if (_timerIsRunning && _doorManager.GetActiveDoor() != null)
             {
                 double colorSaturation = 1;
@@ -88,6 +94,11 @@ namespace School.EscapePhase
                     }
                 }
             }
+            else
+            {
+                _stopSound.Stop();
+                ServiceLocator.Get<GameManager>().OnEscaped();
+            }
         }
         
         double ConvertToRadians(double angle)
@@ -106,8 +117,12 @@ namespace School.EscapePhase
         void ChasePhaseEnd()
         {
             AmbienceChange(true);
-            _chaseSound.Stop();
-            _enemyManager.EnemyStopFollowing("Skolnik");
+            if (_chaseSound != null)
+            {
+                _chaseSound.Stop();
+                _enemyManager.EnemyStopFollowing("Skolnik");
+            }
+            
         }
         
         void AmbienceChange(bool revert = false)

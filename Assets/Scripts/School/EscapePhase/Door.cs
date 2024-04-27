@@ -21,11 +21,14 @@ namespace School.EscapePhase
         {
             return myName;
         }
-        
+
+        private void OnTriggerEnter(Collider other)
+        {
+            ServiceLocator.Get<DoorManager>().DoorOpened(this);
+        }
 
         private void OnCollisionEnter(Collision other)
         {
-            Debug.Log(other.gameObject.name);
             ServiceLocator.Get<DoorManager>().DoorOpened(this);
         }
     }
