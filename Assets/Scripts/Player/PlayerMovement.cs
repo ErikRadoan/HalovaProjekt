@@ -11,14 +11,18 @@ namespace Player
         private Camera _mainCamera;
 
         private CharacterController _controller;
+        private MeshRenderer _meshRenderer;
         private Vector3 _playerVelocity;
         private bool _groundedPlayer;
         [SerializeField] private float playerSpeed = 2.0f;
         [SerializeField] private float jumpHeight = 1.0f;
         private const float GravityValue = -9.81f;
+        
+        [SerializeField] private float groundCheckDistance = 0.1f;
 
         private void Start()
         {
+            _meshRenderer = GetComponent<MeshRenderer>();
             _controller = GetComponent<CharacterController>();
             _mainCamera = Camera.main;
         }
@@ -27,7 +31,7 @@ namespace Player
         {
             RotatePlayer();
 
-            _groundedPlayer = _controller.isGrounded;
+            _groundedPlayer = Physics.Raycast(transform.position, -Vector3.up, _meshRenderer.bounds.size.y/2 + groundCheckDistance);
             if (_groundedPlayer && _playerVelocity.y < 0)
             {
                 _playerVelocity.y = 0f;

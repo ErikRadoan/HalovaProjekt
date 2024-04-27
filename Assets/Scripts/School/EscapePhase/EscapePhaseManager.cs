@@ -74,7 +74,7 @@ namespace School.EscapePhase
                 
                 _announcer.UpdateTimer(_currentTime, colorSaturation);
             }
-            else if(_doorManager.GetActiveDoor() == null && !_timerIsRunning)
+            else if(_doorManager.GetActiveDoor() != null && !_timerIsRunning)
             {
                 GameObject skolnikObject = _enemyManager.GetEnemy("Skolnik");
                 if (skolnikObject != null)
@@ -82,11 +82,9 @@ namespace School.EscapePhase
                     Skolnik skolnik = skolnikObject.GetComponent<Skolnik>();
                     if (skolnik != null)
                     {
-                        float currentSpeed = skolnik.GetSpeed();
-                        float currentRotationSpeed = skolnik.GetRotationSpeed();
-
-                        skolnik.SetSpeed(currentSpeed + Time.deltaTime / 2);
-                        skolnik.SetRotationSpeed(currentRotationSpeed + Time.deltaTime / 2);
+                        skolnik.SetSpeed(skolnik.GetSpeed() + (Time.deltaTime / 2));
+                        skolnik.SetRotationSpeed(skolnik.GetRotationSpeed() + Time.deltaTime);
+                        skolnik.SetAcceleration(skolnik.GetAcceleration() + (Time.deltaTime / 4));
                     }
                 }
             }

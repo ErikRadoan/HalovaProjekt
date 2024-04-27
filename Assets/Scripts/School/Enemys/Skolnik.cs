@@ -6,8 +6,6 @@ namespace School.Enemys
 {
     public class Skolnik : Enemy
     {
-        public float speed;
-        public float rotationSpeed;
         NavMeshAgent _agent;
 
         private void OnEnable()
@@ -22,7 +20,17 @@ namespace School.Enemys
         
         public float GetSpeed()
         {
-            return speed;
+            return _agent.speed;
+        }
+        
+        public void SetAcceleration(float newAcceleration)
+        {
+            _agent.acceleration = newAcceleration;
+        }
+        
+        public float GetAcceleration()
+        {
+            return _agent.acceleration;
         }
         
         public void SetRotationSpeed(float newRotationSpeed)
@@ -32,7 +40,7 @@ namespace School.Enemys
         
         public float GetRotationSpeed()
         {
-            return rotationSpeed;
+            return _agent.angularSpeed;
         }
     }
 }
