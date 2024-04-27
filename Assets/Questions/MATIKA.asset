@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536ec26c98106ef41ac52817d7e28f1d, type: 3}
   m_Name: MATIKA
   m_EditorClassIdentifier: 
-  color: {r: 0.42352945, g: 0.7568628, b: 0.9921569, a: 1}
+  color:
+    m_NormalColor: {r: 0.04873618, g: 0.06034996, b: 0.6981132, a: 0}
+    m_HighlightedColor: {r: 0.0057048798, g: 0, b: 1, a: 0}
+    m_PressedColor: {r: 0.01886791, g: 0.015379126, b: 0.015379126, a: 0}
+    m_SelectedColor: {r: 0.084905684, g: 0.06680315, b: 0.7529412, a: 0}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
+    m_ColorMultiplier: 0
+    m_FadeDuration: 1
+  background: {fileID: 21300000, guid: aa47c22356ff6bb498ad0967b81210eb, type: 3}
   quizName: Matika
   questions:
   - {fileID: 11400000, guid: a9f790017c84c5447aa70c9318d6cc69, type: 2}
+  - {fileID: 11400000, guid: 62bfdf96cc6cc624abe7e2dcfee77dc7, type: 2}
+  - {fileID: 11400000, guid: 976481068c830bf47931cc4e096d243c, type: 2}
+  - {fileID: 11400000, guid: a0e798bcdd8ea1740a8113240347feca, type: 2}

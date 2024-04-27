@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: MAT1
   m_EditorClassIdentifier: Assembly-CSharp:Quiz:QuizQuestion
-  question: "Ak\xFD je priese\u010Dn\xEDk s osou Y pre f: y = (x5+7)/(x-3)"
+  question: "M\xE1me trojuholn\xEDk s preponou 5 dm ko\u013Eko bud\xFA ma\u0165 zost\xE1vaj\xFAce
+    strany?"
   answers:
-  - 7/(7+1) + 2x
-  - 22/(x-3) + 5
-  - 5x/(22*3) - 4
-  - 55x + 6 * 22x
-  correctAnswer: 22/(x-3) + 5
+  - a = 5cm | b = 10mm
+  - a = 2dm | b = 0.2m
+  - a = 100mm | b = 30cm
+  - a = 0.5m | b = 4mm
+  correctAnswer: a = 0.5m | b = 4mm
