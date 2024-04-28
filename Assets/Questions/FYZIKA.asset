@@ -12,14 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536ec26c98106ef41ac52817d7e28f1d, type: 3}
   m_Name: FYZIKA
   m_EditorClassIdentifier: 
-  color:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 0}
-    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
-    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
-    m_ColorMultiplier: 0
-    m_FadeDuration: 0
-  background: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 1}
+  background: {fileID: 21300000, guid: aa47c22356ff6bb498ad0967b81210eb, type: 3}
   quizName: Fyzika
-  questions: []
+  questions:
+  - {fileID: 11400000, guid: 058e4b7c8c581ef4997b5d7ced870de1, type: 2}
+  - {fileID: 11400000, guid: ef5e8fc21e2d7574087f063f9429d445, type: 2}
+  - {fileID: 11400000, guid: 82e8dd9a55647314a86884e75c93812e, type: 2}
+  - {fileID: 11400000, guid: 9fea23fc3f517464080d84c6ac5b31d3, type: 2}

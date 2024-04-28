@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Image = UnityEngine.UIElements.Image;
 
 namespace Quiz
 {
@@ -11,8 +13,7 @@ namespace Quiz
 
         private int currentQuiz = 0;
         private int currentQuestion = 0;
-
-        [SerializeField] private SpriteRenderer quizPBackGround;
+        
         [SerializeField] private List<GameObject> answerButtons;
         [SerializeField] private TMP_Text questionText;
         
@@ -51,19 +52,23 @@ namespace Quiz
                     selectedQuizzes[rng.Next(selectedQuizzes.Count)] = fyzikaQuiz;
                 }
             }
-
-            // Initialize the quiz
-            currentQuizScriptable = selectedQuizzes[currentQuiz];
-
+            
+            foreach (var quiz in selectedQuizzes)
+            {
+                Debug.Log(quiz.quizName);
+            }
+            
+            NewQuiz();
             // Use the random index to access a random question
             currentQuizQuestion = GetANewQuestion();
 
             // Subscribe to the onClick event of each button
             foreach (var button in answerButtons)
             {
-                string answer = button.GetComponentInChildren<TMP_Text>().text;
-                button.GetComponent<Button>().onClick.AddListener(() => OnAnswerButtonClicked(answer));
-                button.GetComponent<Button>().colors = currentQuizScriptable.color;
+                button.GetComponent<Button>().onClick.AddListener(() => OnAnswerButtonClicked(button.GetComponentInChildren<TMP_Text>().text));
+                var block = button.GetComponent<Button>().colors;
+                block.normalColor = currentQuizScriptable.color;
+                button.GetComponent<Button>().colors = block;
             }
 
             // Update the UI
@@ -72,26 +77,25 @@ namespace Quiz
 
         void OnAnswerButtonClicked(string answer)
         {
-            if (answer == currentQuizQuestion.correctAnswer)
+            Debug.Log(answer + " clicked" + currentQuizQuestion.correctAnswer);
+            if (string.Equals(answer, currentQuizQuestion.correctAnswer, StringComparison.Ordinal))
             {
                 // The answer is correct, move to the next question
                 currentQuestion++;
-                if (currentQuestion < currentQuizScriptable.questions.Count)
+                if (currentQuestion < 3)
                 {
                     currentQuizQuestion = GetANewQuestion();
                     UpdateUI(currentQuizScriptable, currentQuizQuestion);
                 }
                 else
                 {
-                    
-                    
                     if (selectedQuizzes.Count > 0)
                     {
                         NewQuiz();
                     }
                     else
                     { //TODO: Implement day system
-                        //ServiceLocator.Get<GameManager>()...
+                        Debug.Log("End of the quiz");
                     }
                     
                 }
@@ -108,9 +112,10 @@ namespace Quiz
         
         void UpdateUI(QuizScriptable quiz, QuizQuestion question)
         {
+            Debug.Log(question);
             questionText.text = question.question;
             
-            quizPBackGround.sprite = quiz.background;
+            GetComponent<RawImage>().texture = quiz.background.texture;
 
             List<string> shuffledAnswers = new List<string>(question.answers);
 
@@ -118,25 +123,33 @@ namespace Quiz
             
             foreach (var button in answerButtons)
             {
-                button.GetComponent<TMP_Text>().text = shuffledAnswers[random.Next(shuffledAnswers.Count)];
+                string answer = shuffledAnswers[random.Next(shuffledAnswers.Count)];
+                button.GetComponentInChildren<TMP_Text>().text = answer;
+                shuffledAnswers.Remove(answer);
             }
         }
         
         QuizQuestion GetANewQuestion()
         {
-            // Use the random index to access a random question
-            currentQuizQuestion = currentQuizScriptable.questions[rng.Next(currentQuizScriptable.questions.Count)];
-            if (alreadyUsedQuestions.Contains(currentQuizQuestion) && alreadyUsedQuestions.Count < currentQuizScriptable.questions.Count)
+            // If all questions have been used, return null
+            if (alreadyUsedQuestions.Count >= currentQuizScriptable.questions.Count)
             {
-                GetANewQuestion();
-            }
-            else if (alreadyUsedQuestions.Count < currentQuizScriptable.questions.Count)
-            {
-                alreadyUsedQuestions.Add(currentQuizQuestion);
-                return currentQuizQuestion;
+                return null;
             }
 
-            return null;
+            // Use the random index to access a random question
+            QuizQuestion newQuestion = currentQuizScriptable.questions[rng.Next(currentQuizScriptable.questions.Count)];
+
+            // If the question has already been used, recursively call the function until a new question is found
+            while (alreadyUsedQuestions.Contains(newQuestion))
+            {
+                newQuestion = currentQuizScriptable.questions[rng.Next(currentQuizScriptable.questions.Count)];
+            }
+
+            // Add the new question to the list of used questions
+            alreadyUsedQuestions.Add(newQuestion);
+
+            return newQuestion;
         }
         
         void NewQuiz()
@@ -147,6 +160,7 @@ namespace Quiz
 
             currentQuizScriptable = newQuiz;
             currentQuestion = 0;
+            alreadyUsedQuestions = new List<QuizQuestion>();
             currentQuizQuestion = GetANewQuestion();
             UpdateUI(currentQuizScriptable, currentQuizQuestion);
         }

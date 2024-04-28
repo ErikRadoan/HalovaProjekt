@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cada58b07f479c40a467a56cad8aa4f, type: 3}
-  m_Name: MAT1
-  m_EditorClassIdentifier: Assembly-CSharp:Quiz:QuizQuestion
-  question: "Ak je trojuholn\xEDk s preponou 8 dm jeho strany s\xFA:"
+  m_Name: ANJ1
+  m_EditorClassIdentifier: 
+  question: "Prelo\u017E: \"How would you describe this game?\""
   answers:
-  - a = 5cm, b = 7dm
-  - a = 153mm, b = 0,6m
-  - 'a = 0,78m, b = 21mm '
-  - a = 7 dm, b = 0,09m
-  correctAnswer: 'a = 0,78m, b = 21mm '
+  - '"excelent"'
+  - "\"Ako by si pop\xEDsal t\xFAto hru\""
+  - "\"T\xE1to hra je dobr\xE1\""
+  - "\"Ako by si ohodnotil t\xFAto hru?\""
+  correctAnswer: "\"Ako by si pop\xEDsal t\xFAto hru\""

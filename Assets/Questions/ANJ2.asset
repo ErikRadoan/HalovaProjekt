@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cada58b07f479c40a467a56cad8aa4f, type: 3}
-  m_Name: MAT1
-  m_EditorClassIdentifier: Assembly-CSharp:Quiz:QuizQuestion
-  question: "Ak je trojuholn\xEDk s preponou 8 dm jeho strany s\xFA:"
+  m_Name: ANJ2
+  m_EditorClassIdentifier: 
+  question: "Prelo\u017E: \"Nem\xE1m \u0161ajnu kde je IKT69\""
   answers:
-  - a = 5cm, b = 7dm
-  - a = 153mm, b = 0,6m
-  - 'a = 0,78m, b = 21mm '
-  - a = 7 dm, b = 0,09m
-  correctAnswer: 'a = 0,78m, b = 21mm '
+  - '"I have no idea where IKT69 is"'
+  - '"IKT69 is behind the hills"'
+  - '"I dont know where IKT96 is"'
+  - '"I know where IKT69 is"'
+  correctAnswer: '"I have no idea where IKT69 is"'

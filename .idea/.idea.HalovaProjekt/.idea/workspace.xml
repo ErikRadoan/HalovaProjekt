@@ -6,12 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b660345c-2baa-4a6d-9656-9e6905515a34" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HalovaProjekt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalovaProjekt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Images/R.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Images/R.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Questions/FYZIKA.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Questions/FYZIKA.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Questions/MAT1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Questions/MAT1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Questions/MATIKA.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Questions/MATIKA.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Questions.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Questions.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizPhaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizPhaseManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizScriptable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizScriptable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +30,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/School/Enemys/Skolnik.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Sound/SoundPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ai.navigation@1.1.5/Runtime/NavMeshSurface.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.8/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -139,6 +140,7 @@
       <workItem from="1714213155927" duration="1721000" />
       <workItem from="1714217547818" duration="8039000" />
       <workItem from="1714235253065" duration="2609000" />
+      <workItem from="1714295052811" duration="3040000" />
     </task>
     <servers />
   </component>

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 536ec26c98106ef41ac52817d7e28f1d, type: 3}
-  m_Name: MATIKA
+  m_Name: ANGLICTINA
   m_EditorClassIdentifier: 
-  color: {r: 0.04032612, g: 0, b: 1, a: 1}
+  color: {r: 0.020284176, g: 1, b: 0, a: 1}
   background: {fileID: 21300000, guid: aa47c22356ff6bb498ad0967b81210eb, type: 3}
-  quizName: Matika
+  quizName: "Angli\u010Dtina"
   questions:
-  - {fileID: 11400000, guid: a9f790017c84c5447aa70c9318d6cc69, type: 2}
-  - {fileID: 11400000, guid: 62bfdf96cc6cc624abe7e2dcfee77dc7, type: 2}
-  - {fileID: 11400000, guid: 976481068c830bf47931cc4e096d243c, type: 2}
-  - {fileID: 11400000, guid: a0e798bcdd8ea1740a8113240347feca, type: 2}
+  - {fileID: 11400000, guid: 64ff9f1e83c890a49bfc93b4eaf2d99a, type: 2}
+  - {fileID: 11400000, guid: 186b64dcad0743a49947ba4b381a521d, type: 2}
+  - {fileID: 11400000, guid: 6ba59883142b9fe4fb78d809e3a27cff, type: 2}
+  - {fileID: 11400000, guid: 0d65b1490bb3b4e4c89b0e00d9a3c49d, type: 2}

@@ -7,7 +7,7 @@ namespace Quiz
     [CreateAssetMenu(fileName = "Quiz", menuName = "Quiz/Quiz")]
     public class QuizScriptable : ScriptableObject
     {
-        public ColorBlock color;
+        public Color color;
         public Sprite background;
         public string quizName;
         public List<QuizQuestion> questions;

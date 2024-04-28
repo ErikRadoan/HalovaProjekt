@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cada58b07f479c40a467a56cad8aa4f, type: 3}
-  m_Name: MAT1
-  m_EditorClassIdentifier: Assembly-CSharp:Quiz:QuizQuestion
-  question: "Ak je trojuholn\xEDk s preponou 8 dm jeho strany s\xFA:"
+  m_Name: ANJ4
+  m_EditorClassIdentifier: 
+  question: 'Awnser: "Who will you probably be in 4 years?"'
   answers:
-  - a = 5cm, b = 7dm
-  - a = 153mm, b = 0,6m
-  - 'a = 0,78m, b = 21mm '
-  - a = 7 dm, b = 0,09m
-  correctAnswer: 'a = 0,78m, b = 21mm '
+  - Emotional wreck
+  - "A proud graduate of SPSE H\xE1lov\xE1 16"
+  - A trash collector
+  - A billionare
+  correctAnswer: "A proud graduate of SPSE H\xE1lov\xE1 16"
