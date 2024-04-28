@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 289f7ffce9922f04ea98efc144693e42
+guid: 56f92c8fd75305c4db6be393062efe33
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Letters for Learners Dots
+  - Seymour One
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

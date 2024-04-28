@@ -35,7 +35,7 @@ namespace Core
             SceneManager.LoadScene("School");
         }
 
-        void DeductTime()
+        public void DeductTime()
         {
             currentTimeToEscape -= 15;
         }

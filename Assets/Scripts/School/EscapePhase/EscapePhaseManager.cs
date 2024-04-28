@@ -26,14 +26,10 @@ namespace School.EscapePhase
         DoorManager _doorManager;
         EnemyManager _enemyManager;
         
-        private static readonly int SkyTint = Shader.PropertyToID("_SkyTint");
-        private static readonly int Exposure = Shader.PropertyToID("_Exposure");
 
         Light directionalLight;
         public void Start()
         {
-            escapeTime = ServiceLocator.Get<GameManager>().currentTimeToEscape;
-            
             //set references
             directionalLight = GameObject.Find("Directional Light").GetComponent<Light>();
             _doorManager = ServiceLocator.Get<DoorManager>();
@@ -46,13 +42,19 @@ namespace School.EscapePhase
             ServiceLocator.Get<DoorManager>().OnDoorOpenedEvent += ChasePhaseEnd;
             
             //start the timer
-            _currentTime = escapeTime;
-            _timerIsRunning = true;
-            
-            //set up the ambience
-            _stopSound = ServiceLocator.Get<SoundPlayer>().PlayUntilStopped("Chill", true);
-            AmbienceChange(true);
-            
+            if (ServiceLocator.Get<GameManager>().currentTimeToEscape > 0)
+            {
+                escapeTime = ServiceLocator.Get<GameManager>().currentTimeToEscape;
+                _currentTime = escapeTime;
+                _timerIsRunning = true;
+                _stopSound = ServiceLocator.Get<SoundPlayer>().PlayUntilStopped("Chill", true);
+                AmbienceChange(true);
+            }
+            else
+            {
+                _chaseTime = ServiceLocator.Get<GameManager>().currentTimeToEscape * -1;
+                ChasePhase();
+            }
         }
         
         

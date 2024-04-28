@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Core;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Image = UnityEngine.UIElements.Image;
 
@@ -10,8 +12,7 @@ namespace Quiz
     public class QuizPhaseManager : MonoBehaviour
     {
         [SerializeField] private List<QuizScriptable> quizList;
-
-        private int currentQuiz = 0;
+        
         private int currentQuestion = 0;
         
         [SerializeField] private List<GameObject> answerButtons;
@@ -89,22 +90,22 @@ namespace Quiz
                 }
                 else
                 {
-                    if (selectedQuizzes.Count > 0)
-                    {
-                        NewQuiz();
-                    }
-                    else
-                    { //TODO: Implement day system
-                        Debug.Log("End of the quiz");
-                    }
+                    
                     
                 }
             }
             else
             {
-                // The answer is incorrect, show an error message
-                Debug.Log("Incorrect answer");
+                ServiceLocator.Get<GameManager>().DeductTime();
+            }
+            
+            if (selectedQuizzes.Count > 0)
+            {
                 NewQuiz();
+            }
+            else
+            { 
+                SceneManager.LoadScene("School");
             }
             
             
@@ -126,6 +127,9 @@ namespace Quiz
                 string answer = shuffledAnswers[random.Next(shuffledAnswers.Count)];
                 button.GetComponentInChildren<TMP_Text>().text = answer;
                 shuffledAnswers.Remove(answer);
+                var block = button.GetComponent<Button>().colors;
+                block.normalColor = currentQuizScriptable.color;
+                button.GetComponent<Button>().colors = block;
             }
         }
         

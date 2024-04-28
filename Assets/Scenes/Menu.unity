@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c9eb6dfbfb24b44a4a09ebdad20aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTimeToEscape: 10
+  currentTimeToEscape: 60
 --- !u!4 &486467415
 Transform:
   m_ObjectHideFlags: 0

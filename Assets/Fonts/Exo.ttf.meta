@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a1045271ad7c7354eb2b9708ad26314f
+guid: 4fc9d3a804efc7b4aafacc7d968f4af6
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Letters for Learners Outline
+  - Exo 2
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
