@@ -13,6 +13,7 @@ namespace Core
         [SerializeField] public int currentTimeToEscape = 60;
         [SerializeField] public int currentDay = 1;
 
+        [SerializeField] public float sensitivitySettings;
         void Awake()
         {
             if (Instance == null)

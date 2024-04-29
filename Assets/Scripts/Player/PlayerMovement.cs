@@ -1,3 +1,4 @@
+using Core;
 using UnityEngine;
 
 namespace Player
@@ -25,6 +26,7 @@ namespace Player
             _meshRenderer = GetComponent<MeshRenderer>();
             _controller = GetComponent<CharacterController>();
             _mainCamera = Camera.main;
+            mouseSensitivity = ServiceLocator.Get<GameManager>().sensitivitySettings;
         }
 
         private void Update()
