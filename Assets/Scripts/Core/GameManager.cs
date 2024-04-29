@@ -1,3 +1,6 @@
+using System;
+using Menu;
+using SavingSystem;
 using School.Core;
 using School.EscapePhase;
 using UnityEngine;
@@ -30,10 +33,13 @@ namespace Core
         void Start()
         {
             ServiceLocator.Register(this);
+            ServiceLocator.Get<SavingManager>().LoadGame();
         }
-
+        
+        
         public void OnStartButtonPressed()
         {
+            
             SceneManager.LoadScene("School");
         }
 
@@ -46,6 +52,10 @@ namespace Core
         {
             SceneManager.LoadScene("Scenes/Questions");
         }
-        
+
+        private void OnApplicationQuit()
+        {
+            ServiceLocator.Get<SavingManager>().SaveGame();
+        }
     }
 }

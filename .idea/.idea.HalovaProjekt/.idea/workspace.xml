@@ -7,8 +7,11 @@
     <list default="true" id="b660345c-2baa-4a6d-9656-9e6905515a34" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HalovaProjekt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalovaProjekt/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/School.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/School.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/Settings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizPhaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizPhaseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/School/EscapePhase/EscapePhaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/School/EscapePhase/EscapePhaseManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +26,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerReference.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/QuizPhaseManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quiz/QuizScriptable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SavingSystem/SavingManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/School/Enemys/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/School/Enemys/EnemyManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/School/Enemys/Skolnik.cs" root0="FORCE_HIGHLIGHTING" />
@@ -141,6 +145,8 @@
       <workItem from="1714295052811" duration="4987000" />
       <workItem from="1714383150073" duration="3539000" />
       <workItem from="1714392823836" duration="1205000" />
+      <workItem from="1714395851219" duration="1057000" />
+      <workItem from="1714410492285" duration="3344000" />
     </task>
     <servers />
   </component>

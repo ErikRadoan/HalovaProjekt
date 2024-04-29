@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Core;
+using SavingSystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -162,10 +163,11 @@ namespace Quiz
         
         void NewQuiz()
         {
-            if (selectedQuizzes.Count == 0)
+            if (selectedQuizzes.Count <= 0)
             {
-                if(ServiceLocator.Get<GameManager>().currentDay == 5)
+                if(ServiceLocator.Get<GameManager>().currentDay >= 5)
                 {
+                    ServiceLocator.Get<SavingManager>().ResetGame();
                     SceneManager.LoadScene("Menu");
                 }
                 else
@@ -174,15 +176,19 @@ namespace Quiz
                     SceneManager.LoadScene("School");
                 }
             }
-            var newQuiz = selectedQuizzes[rng.Next(selectedQuizzes.Count)];
+            else
+            {
+                var newQuiz = selectedQuizzes[rng.Next(selectedQuizzes.Count)];
                         
-            selectedQuizzes.Remove(newQuiz);
+                selectedQuizzes.Remove(newQuiz);
 
-            currentQuizScriptable = newQuiz;
-            currentQuestion = 0;
-            alreadyUsedQuestions = new List<QuizQuestion>();
-            currentQuizQuestion = GetANewQuestion();
-            UpdateUI(currentQuizScriptable, currentQuizQuestion);
+                currentQuizScriptable = newQuiz;
+                currentQuestion = 0;
+                alreadyUsedQuestions = new List<QuizQuestion>();
+                currentQuizQuestion = GetANewQuestion();
+                UpdateUI(currentQuizScriptable, currentQuizQuestion);
+            }
+            
         }
     }
 }

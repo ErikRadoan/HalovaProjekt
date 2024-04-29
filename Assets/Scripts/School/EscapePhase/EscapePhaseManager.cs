@@ -84,10 +84,14 @@ namespace School.EscapePhase
                 {
                     _timerIsRunning = false;
                     _currentTime = 0;
-                    if (_stopSound.isPlaying)
+                    if (_stopSound != null)
                     {
-                        _stopSound.Stop();
+                        if (_stopSound.isPlaying)
+                        {
+                            _stopSound.Stop();
+                        }
                     }
+                    
                     ChasePhase();
                 }
                 
@@ -109,7 +113,13 @@ namespace School.EscapePhase
             }
             else
             {
-                _stopSound.Stop();
+                if(_stopSound != null)
+                {
+                    if (_stopSound.isPlaying)
+                    {
+                        _stopSound.Stop();
+                    }
+                }
                 ServiceLocator.Get<GameManager>().OnEscaped();
             }
         }
