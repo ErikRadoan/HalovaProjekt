@@ -11,6 +11,7 @@ namespace Core
         public static GameManager Instance { get; private set; }
 
         [SerializeField] public int currentTimeToEscape = 60;
+        [SerializeField] public int currentDay = 1;
 
         void Awake()
         {
@@ -44,5 +45,6 @@ namespace Core
         {
             SceneManager.LoadScene("Scenes/Questions");
         }
+        
     }
 }

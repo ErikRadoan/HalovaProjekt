@@ -28,6 +28,7 @@ namespace School.EscapePhase
         
 
         Light directionalLight;
+        
         public void Start()
         {
             //set references
@@ -37,7 +38,9 @@ namespace School.EscapePhase
             _enemyManager = ServiceLocator.Get<EnemyManager>();
             
             //trigger other managers
+
             ServiceLocator.Register(this);
+            
             ServiceLocator.Get<DoorManager>().StartGame();
             ServiceLocator.Get<DoorManager>().OnDoorOpenedEvent += ChasePhaseEnd;
             
@@ -45,6 +48,7 @@ namespace School.EscapePhase
             if (ServiceLocator.Get<GameManager>().currentTimeToEscape > 0)
             {
                 escapeTime = ServiceLocator.Get<GameManager>().currentTimeToEscape;
+                _announcer.SetDay(ServiceLocator.Get<GameManager>().currentDay);
                 _currentTime = escapeTime;
                 _timerIsRunning = true;
                 _stopSound = ServiceLocator.Get<SoundPlayer>().PlayUntilStopped("Chill", true);
@@ -57,6 +61,10 @@ namespace School.EscapePhase
             }
         }
         
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<EscapePhaseManager>();
+        }
         
         void Update()
         {
@@ -76,7 +84,10 @@ namespace School.EscapePhase
                 {
                     _timerIsRunning = false;
                     _currentTime = 0;
-                    _stopSound.Stop();
+                    if (_stopSound.isPlaying)
+                    {
+                        _stopSound.Stop();
+                    }
                     ChasePhase();
                 }
                 
@@ -140,7 +151,13 @@ namespace School.EscapePhase
                 RenderSettings.fog = true;
             }
         }
-        
-        
+
+        private void OnDisable()
+        {
+            if (_doorManager != null)
+            {
+                _doorManager.OnDoorOpenedEvent -= ChasePhaseEnd;
+            }
+        }
     }
 }

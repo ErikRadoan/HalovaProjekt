@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Questions.unity
     guid: cd171352ef66ebd4599750db8e515e4a
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 7618cc18af6ab1f45819e72e7ec11468
   m_configObjects: {}

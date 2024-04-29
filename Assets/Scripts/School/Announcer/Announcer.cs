@@ -10,10 +10,16 @@ namespace School.Announcer
         
         [SerializeField] private TMP_Text announcerText;
         [SerializeField] private TMP_Text timerText;
+        [SerializeField] private TMP_Text dayText;
         
         private void Awake()
         {
             ServiceLocator.Register(this, true);
+        }
+        
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<Announcer>();
         }
         
         public void Announce(string message)
@@ -24,6 +30,19 @@ namespace School.Announcer
         public void ClearAnnouncement()
         {
             announcerText.text = "";
+        }
+
+        public void SetDay(int day)
+        {
+            dayText.text = day switch
+            {
+                1 => "Monday",
+                2 => "Tuesday",
+                3 => "Wednesday",
+                4 => "Thursday",
+                5 => "Friday",
+                _ => dayText.text
+            };
         }
 
         public void UpdateTimer(float time, double colorSaturation)

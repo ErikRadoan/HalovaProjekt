@@ -18,6 +18,11 @@ namespace Quiz
         [SerializeField] private List<GameObject> answerButtons;
         [SerializeField] private TMP_Text questionText;
         
+        [SerializeField] private Sprite correctSprite;
+        [SerializeField] private Sprite nullSprite;
+        [SerializeField] private List<RawImage> feedbackImages;
+        [SerializeField] private TMP_Text classNameText;
+        
         List<QuizScriptable> selectedQuizzes = new();
         List<QuizQuestion> alreadyUsedQuestions = new();
         
@@ -90,23 +95,16 @@ namespace Quiz
                 }
                 else
                 {
-                    
-                    
+                    NewQuiz();
                 }
             }
             else
             {
                 ServiceLocator.Get<GameManager>().DeductTime();
-            }
-            
-            if (selectedQuizzes.Count > 0)
-            {
                 NewQuiz();
             }
-            else
-            { 
-                SceneManager.LoadScene("School");
-            }
+            
+            
             
             
         }
@@ -115,6 +113,12 @@ namespace Quiz
         {
             Debug.Log(question);
             questionText.text = question.question;
+            classNameText.text = quiz.quizName;
+
+            foreach (var feedBackImage in feedbackImages)
+            {
+                feedBackImage.texture = feedbackImages.IndexOf(feedBackImage) < currentQuestion ? correctSprite.texture : nullSprite.texture;
+            }
             
             GetComponent<RawImage>().texture = quiz.background.texture;
 
@@ -158,6 +162,18 @@ namespace Quiz
         
         void NewQuiz()
         {
+            if (selectedQuizzes.Count == 0)
+            {
+                if(ServiceLocator.Get<GameManager>().currentDay == 5)
+                {
+                    SceneManager.LoadScene("Menu");
+                }
+                else
+                {
+                    ServiceLocator.Get<GameManager>().currentDay++;
+                    SceneManager.LoadScene("School");
+                }
+            }
             var newQuiz = selectedQuizzes[rng.Next(selectedQuizzes.Count)];
                         
             selectedQuizzes.Remove(newQuiz);

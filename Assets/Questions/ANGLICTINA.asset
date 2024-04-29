@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ANGLICTINA
   m_EditorClassIdentifier: 
   color: {r: 0.020284176, g: 1, b: 0, a: 1}
-  background: {fileID: 21300000, guid: aa47c22356ff6bb498ad0967b81210eb, type: 3}
+  background: {fileID: 21300000, guid: 027b97f6bc918f44a8ee8b679fb33734, type: 3}
   quizName: "Angli\u010Dtina"
   questions:
   - {fileID: 11400000, guid: 64ff9f1e83c890a49bfc93b4eaf2d99a, type: 2}

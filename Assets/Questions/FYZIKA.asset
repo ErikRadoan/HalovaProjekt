@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536ec26c98106ef41ac52817d7e28f1d, type: 3}
   m_Name: FYZIKA
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0, a: 1}
-  background: {fileID: 21300000, guid: aa47c22356ff6bb498ad0967b81210eb, type: 3}
+  color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+  background: {fileID: 21300000, guid: 3f8083ba5ca30aa44a29ff0f35b5bd95, type: 3}
   quizName: Fyzika
   questions:
   - {fileID: 11400000, guid: 058e4b7c8c581ef4997b5d7ced870de1, type: 2}

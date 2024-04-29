@@ -22,8 +22,15 @@ namespace School.EscapePhase
         public event OnDoorOpened OnDoorOpenedEvent;
         private void Awake()
         {
+
             ServiceLocator.Register(this);
+            
             _doors = FindObjectsByType<Door>(FindObjectsSortMode.None).ToList();
+        }
+        
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<DoorManager>();
         }
 
         public void StartGame()
@@ -32,7 +39,7 @@ namespace School.EscapePhase
             _activeDoor = GenerateRandomDoor();
             _announcer = ServiceLocator.Get<Announcer.Announcer>();
             Debug.Log(_doors.Count);
-            _announcer.Announce("Find the " + _activeDoor.GetDoorName() + " door!");
+            _announcer.Announce("Next class is in " + _activeDoor.GetDoorName() + "!");
         }
         
 

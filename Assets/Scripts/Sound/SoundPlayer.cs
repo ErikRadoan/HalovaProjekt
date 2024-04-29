@@ -14,7 +14,12 @@ namespace Sound
         {
             ServiceLocator.Register(this);
         }
-        
+
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<SoundPlayer>();
+        }
+
         public void PlaySound(string soundName)
         {
             var sound = LoadSound(soundName);

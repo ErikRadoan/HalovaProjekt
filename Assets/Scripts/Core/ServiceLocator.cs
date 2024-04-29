@@ -66,7 +66,18 @@ namespace Core
             return IsRegistered(typeof(TService));
         }
         
-
+        public static bool Unregister<TService>() where TService : IRegistrable, new()
+        {
+            var serviceType = typeof(TService);
+            if (!IsRegistered<TService>())
+            {
+                throw new ServiceLocatorException($"{serviceType.Name} hasn't been registered.");
+            }
+            
+            Services.Remove(serviceType);
+            return true;
+        }
+        
         private static void RegisterNewInstance(Type serviceType)
         {
             Services[serviceType] = Activator.CreateInstance(serviceType);

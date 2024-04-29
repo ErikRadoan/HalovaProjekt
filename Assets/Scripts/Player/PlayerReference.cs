@@ -9,6 +9,12 @@ namespace Player
         private void Awake()
         {
             ServiceLocator.Register(this);
+            
+        }
+        
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<PlayerReference>();
         }
     }
 }

@@ -19,6 +19,11 @@ namespace School.Enemys
             ServiceLocator.Register(this);
         }
         
+        private void OnDestroy()
+        {
+            ServiceLocator.Unregister<EnemyManager>();
+        }
+        
         public void EnemyFollowPlayer(string enemyName)
         {
             GameObject foundEnemy = _enemyList.Find(e => e.name == enemyName);

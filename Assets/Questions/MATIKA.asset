@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MATIKA
   m_EditorClassIdentifier: 
   color: {r: 0.04032612, g: 0, b: 1, a: 1}
-  background: {fileID: 21300000, guid: aa47c22356ff6bb498ad0967b81210eb, type: 3}
+  background: {fileID: 21300000, guid: ba7e253531ab297428040c365614397a, type: 3}
   quizName: Matika
   questions:
   - {fileID: 11400000, guid: a9f790017c84c5447aa70c9318d6cc69, type: 2}
