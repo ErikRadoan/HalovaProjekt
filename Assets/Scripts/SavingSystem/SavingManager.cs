@@ -26,6 +26,7 @@ namespace SavingSystem
 
         public void SaveGame()
         {
+            PlayerPrefs.SetFloat("Volume", ServiceLocator.Get<GameManager>().volumeSettings);
             PlayerPrefs.SetFloat("Sensitivity", ServiceLocator.Get<GameManager>().sensitivitySettings);
             PlayerPrefs.SetInt("CurrentDay", ServiceLocator.Get<GameManager>().currentDay);
             PlayerPrefs.SetInt("CurrentTimeToEscape", ServiceLocator.Get<GameManager>().currentTimeToEscape);
@@ -33,6 +34,7 @@ namespace SavingSystem
         
         public void LoadGame()
         {
+            ServiceLocator.Get<GameManager>().volumeSettings = PlayerPrefs.GetFloat("Volume");
             ServiceLocator.Get<GameManager>().sensitivitySettings = PlayerPrefs.GetFloat("Sensitivity");
             ServiceLocator.Get<GameManager>().currentDay = PlayerPrefs.GetInt("CurrentDay");
             ServiceLocator.Get<GameManager>().currentTimeToEscape = PlayerPrefs.GetInt("CurrentTimeToEscape");

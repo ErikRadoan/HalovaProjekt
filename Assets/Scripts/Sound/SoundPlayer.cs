@@ -25,6 +25,7 @@ namespace Sound
             var sound = LoadSound(soundName);
             var audioSource = Camera.main.gameObject.AddComponent<AudioSource>();
             audioSource.clip = sound;
+            audioSource.volume = ServiceLocator.Get<GameManager>().volumeSettings;
             audioSource.Play();
             Destroy(audioSource, sound.length);
         }
@@ -34,6 +35,7 @@ namespace Sound
             var audioSource = Camera.main.gameObject.AddComponent<AudioSource>();
             audioSource.clip = LoadSound(soundName);
             audioSource.loop = loop;
+            audioSource.volume = ServiceLocator.Get<GameManager>().volumeSettings;
             audioSource.Play();
             return audioSource;
         }
@@ -43,6 +45,7 @@ namespace Sound
             var audioSource = destination.AddComponent<AudioSource>();
             audioSource.clip = LoadSound(soundName);
             audioSource.loop = loop;
+            audioSource.volume = ServiceLocator.Get<GameManager>().volumeSettings;
             audioSource.maxDistance = maxDistance;
             audioSource.spatialBlend = 1f;
             audioSource.Play();

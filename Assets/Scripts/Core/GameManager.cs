@@ -17,6 +17,7 @@ namespace Core
         [SerializeField] public int currentDay = 1;
 
         [SerializeField] public float sensitivitySettings;
+        [SerializeField] public float volumeSettings;
         void Awake()
         {
             if (Instance == null)
