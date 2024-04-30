@@ -8,6 +8,8 @@ namespace School.EscapePhase
 {
     public class Door : MonoBehaviour
     {
+        [SerializeField] public string myDefaultName;
+        
         private string myName;
         [SerializeField] private TMP_Text doorNameText;
         

@@ -18,6 +18,8 @@ namespace Core
 
         [SerializeField] public float sensitivitySettings;
         [SerializeField] public float volumeSettings;
+        [SerializeField] public bool defaultDoorNames = true;
+        
         void Awake()
         {
             if (Instance == null)

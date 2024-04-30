@@ -369,6 +369,8 @@ MonoBehaviour:
   currentTimeToEscape: 60
   currentDay: 1
   sensitivitySettings: 0
+  volumeSettings: 0
+  defaultDoorNames: 1
 --- !u!4 &421831438
 Transform:
   m_ObjectHideFlags: 0
@@ -90047,6 +90049,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1343325571}
     m_Modifications:
+    - target: {fileID: 57124493149534254, guid: ad782c49fac8d384794d89481cc38a15, type: 3}
+      propertyPath: myDefaultName
+      value: IKT1
+      objectReference: {fileID: 0}
     - target: {fileID: 427745713764217719, guid: ad782c49fac8d384794d89481cc38a15, type: 3}
       propertyPath: m_Name
       value: Door

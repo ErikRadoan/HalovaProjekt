@@ -35,7 +35,15 @@ namespace School.EscapePhase
 
         public void StartGame()
         {
-            ShuffleNames();
+            if (ServiceLocator.Get<GameManager>().defaultDoorNames)
+            {
+                Debug.Log("Default names");
+                SetDefaultNames();
+            }
+            else
+            {
+                ShuffleNames();
+            }
             _activeDoor = GenerateRandomDoor();
             _announcer = ServiceLocator.Get<Announcer.Announcer>();
             Debug.Log(_doors.Count);
@@ -84,6 +92,14 @@ namespace School.EscapePhase
                 string chosenDoorName = tempNames[Random.Range(0, tempNames.Count)];
                 door.SetDoorName(chosenDoorName);
                 tempNames.Remove(chosenDoorName);
+            }
+        }
+        
+        private void SetDefaultNames()
+        {
+            foreach (Door door in _doors)
+            {
+                door.SetDoorName(door.myDefaultName);
             }
         }
     }

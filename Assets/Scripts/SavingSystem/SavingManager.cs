@@ -26,6 +26,7 @@ namespace SavingSystem
 
         public void SaveGame()
         {
+            PlayerPrefs.SetInt("DefaultDoorNames", ServiceLocator.Get<GameManager>().defaultDoorNames ? 1 : 0);
             PlayerPrefs.SetFloat("Volume", ServiceLocator.Get<GameManager>().volumeSettings);
             PlayerPrefs.SetFloat("Sensitivity", ServiceLocator.Get<GameManager>().sensitivitySettings);
             PlayerPrefs.SetInt("CurrentDay", ServiceLocator.Get<GameManager>().currentDay);
@@ -34,6 +35,7 @@ namespace SavingSystem
         
         public void LoadGame()
         {
+            ServiceLocator.Get<GameManager>().defaultDoorNames = PlayerPrefs.GetInt("DefaultDoorNames") == 1;
             ServiceLocator.Get<GameManager>().volumeSettings = PlayerPrefs.GetFloat("Volume");
             ServiceLocator.Get<GameManager>().sensitivitySettings = PlayerPrefs.GetFloat("Sensitivity");
             ServiceLocator.Get<GameManager>().currentDay = PlayerPrefs.GetInt("CurrentDay");

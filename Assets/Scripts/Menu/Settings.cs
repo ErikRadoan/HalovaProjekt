@@ -17,6 +17,8 @@ namespace Menu
         [SerializeField] private Slider volumeSlider;
         [SerializeField] private TMP_Text volumeText;
         
+        [SerializeField] private Slider doorNameSwitch;
+        
         private GameManager _gameManager;
         
         void Start()
@@ -47,6 +49,11 @@ namespace Menu
         {
             _gameManager.volumeSettings = volumeSlider.value;
             volumeText.text = _gameManager.volumeSettings.ToString("F1");
+        }
+        
+        public void ChangeDoorNameStatus()
+        {
+            _gameManager.defaultDoorNames = doorNameSwitch.value == 1;
         }
         
         public void ResetGame()
