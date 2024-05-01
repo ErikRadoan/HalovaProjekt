@@ -22,7 +22,6 @@ namespace School.EscapePhase
         public event OnDoorOpened OnDoorOpenedEvent;
         private void Awake()
         {
-
             ServiceLocator.Register(this);
             
             _doors = FindObjectsByType<Door>(FindObjectsSortMode.None).ToList();
