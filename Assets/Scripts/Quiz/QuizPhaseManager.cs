@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Core;
 using SavingSystem;
+using Sound;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,6 +25,8 @@ namespace Quiz
         [SerializeField] private List<RawImage> feedbackImages;
         [SerializeField] private TMP_Text classNameText;
         
+        [SerializeField] private GameObject winScreen;
+        
         List<QuizScriptable> selectedQuizzes = new();
         List<QuizQuestion> alreadyUsedQuestions = new();
         
@@ -31,6 +34,8 @@ namespace Quiz
 
         private QuizScriptable currentQuizScriptable;
         private QuizQuestion currentQuizQuestion;
+        
+        private AudioSource audioSource;
 
         void Start()
         {
@@ -79,6 +84,7 @@ namespace Quiz
             }
 
             // Update the UI
+            audioSource = ServiceLocator.Get<SoundPlayer>().PlayUntilStopped("QuizBackground", true);
             UpdateUI(currentQuizScriptable, currentQuizQuestion);
         }
 
@@ -88,6 +94,7 @@ namespace Quiz
             if (string.Equals(answer, currentQuizQuestion.correctAnswer, StringComparison.Ordinal))
             {
                 // The answer is correct, move to the next question
+                ServiceLocator.Get<SoundPlayer>().PlaySound("Correct");
                 currentQuestion++;
                 if (currentQuestion < 3)
                 {
@@ -101,6 +108,7 @@ namespace Quiz
             }
             else
             {
+                ServiceLocator.Get<SoundPlayer>().PlaySound("Wrong");
                 ServiceLocator.Get<GameManager>().DeductTime();
                 NewQuiz();
             }
@@ -165,16 +173,18 @@ namespace Quiz
         {
             if (selectedQuizzes.Count <= 0)
             {
+                Destroy(audioSource);
                 if(ServiceLocator.Get<GameManager>().currentDay >= 5)
                 {
-                    ServiceLocator.Get<SavingManager>().ResetGame();
-                    SceneManager.LoadScene("Menu");
+                    ServiceLocator.Get<SoundPlayer>().PlaySound("Victory");
+                    winScreen.SetActive(true);
                 }
                 else
                 {
                     ServiceLocator.Get<GameManager>().currentDay++;
                     SceneManager.LoadScene("School");
                 }
+                
             }
             else
             {
@@ -189,6 +199,12 @@ namespace Quiz
                 UpdateUI(currentQuizScriptable, currentQuizQuestion);
             }
             
+        }
+
+        public void ReturnToMenu()
+        {
+            ServiceLocator.Get<SavingManager>().ResetGame();
+            SceneManager.LoadScene("Menu");
         }
     }
 }

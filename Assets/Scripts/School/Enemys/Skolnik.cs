@@ -1,4 +1,6 @@
 using System;
+using Core;
+using School.EscapePhase;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -41,6 +43,15 @@ namespace School.Enemys
         public float GetRotationSpeed()
         {
             return _agent.angularSpeed;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                Destroy(GetComponent<BoxCollider>());
+                ServiceLocator.Get<EscapePhaseManager>().YouGotCaught();
+            }
         }
     }
 }

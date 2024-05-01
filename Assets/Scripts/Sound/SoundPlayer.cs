@@ -8,17 +8,29 @@ namespace Sound
 {
     public class SoundPlayer : MonoBehaviour, IRegistrable
     {
+        public static SoundPlayer Instance { get; private set; }
+        
         [SerializeField] private List<AudioClip> audioClips = new List<AudioClip>();
         
         private void Awake()
         {
-            ServiceLocator.Register(this);
+            if (Instance == null)
+            {
+                Instance = this;
+                ServiceLocator.Register(this);
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
-
-        private void OnDestroy()
+        
+        void Start()
         {
-            ServiceLocator.Unregister<SoundPlayer>();
+            
         }
+        
 
         public void PlaySound(string soundName)
         {

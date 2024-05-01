@@ -48,7 +48,7 @@ namespace Core
 
         public void DeductTime()
         {
-            currentTimeToEscape -= 15;
+            currentTimeToEscape -= 10;
         }
         
         public void OnEscaped()

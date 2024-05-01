@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 3341077661893213331}
   - component: {fileID: 4019278610438833084}
   - component: {fileID: -8042734523231932079}
+  - component: {fileID: 8286885426701668565}
   m_Layer: 0
   m_Name: Skolnik
   m_TagString: Untagged
@@ -289,7 +290,7 @@ NavMeshAgent:
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 60
+  m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -297,7 +298,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1
 --- !u!114 &6992484579468009820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,8 +311,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90da21e301f55834ab17b5bcce62be3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  rotationSpeed: 0
 --- !u!108 &3341077661893213331
 Light:
   m_ObjectHideFlags: 0
@@ -514,3 +513,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &8286885426701668565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6275318096191130124}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.158032, y: 4.071319, z: 0.3844588}
+  m_Center: {x: 0.4526498, y: 1.034292, z: 0.014192373}

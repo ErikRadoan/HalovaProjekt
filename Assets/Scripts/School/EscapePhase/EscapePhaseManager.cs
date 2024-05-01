@@ -2,17 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core;
+using SavingSystem;
 using School.Core;
 using School.Enemys;
 using Sound;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace School.EscapePhase
 {
     public class EscapePhaseManager : MonoBehaviour, IRegistrable
     {
         [SerializeField] private float escapeTime = 60f;
-        
+        [SerializeField] private GameObject youLoseScreen;
         
         private float _currentTime;
         private float _chaseTime;
@@ -44,11 +46,12 @@ namespace School.EscapePhase
             ServiceLocator.Get<DoorManager>().StartGame();
             ServiceLocator.Get<DoorManager>().OnDoorOpenedEvent += ChasePhaseEnd;
             
+            _announcer.SetDay(ServiceLocator.Get<GameManager>().currentDay);
+            
             //start the timer
             if (ServiceLocator.Get<GameManager>().currentTimeToEscape > 0)
             {
                 escapeTime = ServiceLocator.Get<GameManager>().currentTimeToEscape;
-                _announcer.SetDay(ServiceLocator.Get<GameManager>().currentDay);
                 _currentTime = escapeTime;
                 _timerIsRunning = true;
                 _stopSound = ServiceLocator.Get<SoundPlayer>().PlayUntilStopped("Chill", true);
@@ -168,6 +171,19 @@ namespace School.EscapePhase
             {
                 _doorManager.OnDoorOpenedEvent -= ChasePhaseEnd;
             }
+        }
+        
+        public void YouGotCaught()
+        {
+            ServiceLocator.Get<SoundPlayer>().PlaySound("GameOver");
+            youLoseScreen.SetActive(true);
+            ChasePhaseEnd();
+        }
+
+        public void ExitDeathScreen()
+        {
+            ServiceLocator.Get<SavingManager>().ResetGame();
+            SceneManager.LoadScene("Menu");
         }
     }
 }
