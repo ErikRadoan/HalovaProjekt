@@ -43,7 +43,7 @@ namespace Core
         public void OnStartButtonPressed()
         {
             
-            SceneManager.LoadScene("School");
+            SceneManager.LoadScene(1);
         }
 
         public void DeductTime()
@@ -53,7 +53,7 @@ namespace Core
         
         public void OnEscaped()
         {
-            SceneManager.LoadScene("Scenes/Questions");
+            SceneManager.LoadScene(2);
         }
 
         private void OnApplicationQuit()

@@ -182,7 +182,7 @@ namespace Quiz
                 else
                 {
                     ServiceLocator.Get<GameManager>().currentDay++;
-                    SceneManager.LoadScene("School");
+                    SceneManager.LoadScene(1);
                 }
                 
             }
@@ -204,7 +204,7 @@ namespace Quiz
         public void ReturnToMenu()
         {
             ServiceLocator.Get<SavingManager>().ResetGame();
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene(0);
         }
     }
 }

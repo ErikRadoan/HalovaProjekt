@@ -183,7 +183,7 @@ namespace School.EscapePhase
         public void ExitDeathScreen()
         {
             ServiceLocator.Get<SavingManager>().ResetGame();
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene(0);
         }
     }
 }

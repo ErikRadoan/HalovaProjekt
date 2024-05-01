@@ -12,7 +12,6 @@ namespace School.EscapePhase
     public class DoorManager : MonoBehaviour, IRegistrable
     {
         private List<Door> _doors = new List<Door>();
-        [SerializeField] private List<string> doorNames;
         
         private Door _activeDoor;
 
@@ -23,8 +22,6 @@ namespace School.EscapePhase
         private void Awake()
         {
             ServiceLocator.Register(this);
-            
-            _doors = FindObjectsByType<Door>(FindObjectsSortMode.None).ToList();
         }
         
         private void OnDestroy()
@@ -34,15 +31,13 @@ namespace School.EscapePhase
 
         public void StartGame()
         {
-            if (ServiceLocator.Get<GameManager>().defaultDoorNames)
-            {
-                Debug.Log("Default names");
-                SetDefaultNames();
-            }
-            else
+            _doors = FindObjectsByType<Door>(FindObjectsSortMode.None).ToList();
+            SetDefaultNames();
+            if (!ServiceLocator.Get<GameManager>().defaultDoorNames)
             {
                 ShuffleNames();
             }
+
             _activeDoor = GenerateRandomDoor();
             _announcer = ServiceLocator.Get<Announcer.Announcer>();
             Debug.Log(_doors.Count);
@@ -80,17 +75,15 @@ namespace School.EscapePhase
         //Shuffle the door names
         private void ShuffleNames()
         {
-            
             //create a temporary list of door names
-            List<string> tempNames = new List<string>(doorNames);
+            List<Door> tempDoors = new List<Door>(_doors);
             
             foreach (Door door in _doors)
             {
-                
                 //assign a random name to each door from the list of door names and remove the name from the list
-                string chosenDoorName = tempNames[Random.Range(0, tempNames.Count)];
-                door.SetDoorName(chosenDoorName);
-                tempNames.Remove(chosenDoorName);
+                Door chosenTempDoor = tempDoors[Random.Range(0, tempDoors.Count)];
+                door.SetDoorName(chosenTempDoor.GetDoorName());
+                tempDoors.Remove(chosenTempDoor);
             }
         }
         
