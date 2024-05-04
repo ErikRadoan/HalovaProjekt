@@ -9,9 +9,12 @@ namespace SavingSystem
     {
         public static SavingManager Instance { get; private set; }
         
+        GameManager _gameManager;
+        
 
         private void Awake()
         {
+            
             if (Instance == null)
             {
                 Instance = this;
@@ -26,20 +29,23 @@ namespace SavingSystem
 
         public void SaveGame()
         {
-            PlayerPrefs.SetInt("DefaultDoorNames", ServiceLocator.Get<GameManager>().defaultDoorNames ? 1 : 0);
-            PlayerPrefs.SetFloat("Volume", ServiceLocator.Get<GameManager>().volumeSettings);
-            PlayerPrefs.SetFloat("Sensitivity", ServiceLocator.Get<GameManager>().sensitivitySettings);
-            PlayerPrefs.SetInt("CurrentDay", ServiceLocator.Get<GameManager>().currentDay);
-            PlayerPrefs.SetInt("CurrentTimeToEscape", ServiceLocator.Get<GameManager>().currentTimeToEscape);
+            _gameManager = ServiceLocator.Get<GameManager>();
+            
+            PlayerPrefs.SetInt("DefaultDoorNames", _gameManager.defaultDoorNames ? 1 : 0);
+            PlayerPrefs.SetFloat("Volume", _gameManager.volumeSettings);
+            PlayerPrefs.SetFloat("Sensitivity", _gameManager.sensitivitySettings);
+            PlayerPrefs.SetInt("CurrentDay", _gameManager.currentDay);
+            PlayerPrefs.SetInt("CurrentTimeToEscape", _gameManager.currentTimeToEscape);
         }
         
         public void LoadGame()
         {
-            ServiceLocator.Get<GameManager>().defaultDoorNames = PlayerPrefs.GetInt("DefaultDoorNames") == 1;
-            ServiceLocator.Get<GameManager>().volumeSettings = PlayerPrefs.GetFloat("Volume");
-            ServiceLocator.Get<GameManager>().sensitivitySettings = PlayerPrefs.GetFloat("Sensitivity");
-            ServiceLocator.Get<GameManager>().currentDay = PlayerPrefs.GetInt("CurrentDay");
-            ServiceLocator.Get<GameManager>().currentTimeToEscape = PlayerPrefs.GetInt("CurrentTimeToEscape");
+            _gameManager = ServiceLocator.Get<GameManager>();
+            _gameManager.defaultDoorNames = PlayerPrefs.GetInt("DefaultDoorNames") == 1;
+            _gameManager.volumeSettings = PlayerPrefs.GetFloat("Volume");
+            _gameManager.sensitivitySettings = PlayerPrefs.GetFloat("Sensitivity");
+            _gameManager.currentDay = PlayerPrefs.GetInt("CurrentDay");
+            _gameManager.currentTimeToEscape = PlayerPrefs.GetInt("CurrentTimeToEscape");
         }
         
         public void ResetGame()

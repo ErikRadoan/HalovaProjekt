@@ -6,12 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="b660345c-2baa-4a6d-9656-9e6905515a34" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HalovaProjekt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalovaProjekt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/BaseMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/BaseMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/EntityMats/Invisible.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/EntityMats/Invisible.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Doors.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Doors.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/SchoolMats/FloorMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/SchoolMats/FloorMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Klucka.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Klucka.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Railing.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Railing.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Satne.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Satne.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Stairs.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Stairs.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Walls.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/SchoolMats/Walls.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skolnik.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skolnik.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/School.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/School.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/School/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/School/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/School/ReflectionProbe-0.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/School/ReflectionProbe-0.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/Settings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizPhaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quiz/QuizPhaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/School/EscapePhase/DoorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/School/EscapePhase/DoorManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/School/EscapePhase/EscapePhaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/School/EscapePhase/EscapePhaseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SavingSystem/SavingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SavingSystem/SavingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +85,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Documents/RocnikovyProjektBuilds\HalovaProjekt.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Documents/FinalBuild\HalovaProjekt.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\erikc\Documents\RocnikovyProjektBuilds" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -156,7 +172,10 @@
       <workItem from="1714395851219" duration="1057000" />
       <workItem from="1714410492285" duration="3344000" />
       <workItem from="1714459317018" duration="3010000" />
-      <workItem from="1714561201999" duration="7959000" />
+      <workItem from="1714561201999" duration="14447000" />
+      <workItem from="1714688251696" duration="2112000" />
+      <workItem from="1714732434350" duration="1708000" />
+      <workItem from="1714754255387" duration="5372000" />
     </task>
     <servers />
   </component>

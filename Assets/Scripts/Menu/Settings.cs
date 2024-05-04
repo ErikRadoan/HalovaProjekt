@@ -21,44 +21,57 @@ namespace Menu
         
         private GameManager _gameManager;
         
-        void Start()
+        void Awake()
         {
             _gameManager = ServiceLocator.Get<GameManager>();
             ServiceLocator.Register(this);
-            
-            sensitivityText.text = _gameManager.sensitivitySettings.ToString("F1");
-            sensitivitySlider.value = _gameManager.sensitivitySettings;
-            
-            volumeText.text = _gameManager.volumeSettings.ToString("F1");
-            volumeSlider.value = _gameManager.volumeSettings;
+        }
+
+        private void OnEnable()
+        {
+            UpdateSettingsUI();
         }
 
         private void OnDestroy()
         {
             ServiceLocator.Unregister<Settings>();
-            
-        }
-
-        public void ChangeSensitivityValue()
-        {
-            _gameManager.sensitivitySettings =  sensitivitySlider.value;
-            sensitivityText.text = _gameManager.sensitivitySettings.ToString("F1");
         }
         
-        public void ChangeVolumeValue()
-        {
-            _gameManager.volumeSettings = volumeSlider.value;
-            volumeText.text = _gameManager.volumeSettings.ToString("F1");
-        }
-        
-        public void ChangeDoorNameStatus()
-        {
-            _gameManager.defaultDoorNames = doorNameSwitch.value == 1;
-        }
         
         public void ResetGame()
         {
             ServiceLocator.Get<SavingManager>().ResetGame();
+            UpdateSettingsUI();
+        }
+
+        public void DoorNameSwitch()
+        {
+            _gameManager.defaultDoorNames = doorNameSwitch.value == 1;
+            UpdateSettingsUI();
+        }
+        
+        public void VolumeChanged()
+        {
+            _gameManager.volumeSettings = volumeSlider.value;
+            UpdateSettingsUI();
+        }
+        
+        public void SensitivityChanged()
+        {
+            _gameManager.sensitivitySettings = sensitivitySlider.value;
+            UpdateSettingsUI();
+        }
+
+
+        private void UpdateSettingsUI()
+        {
+            volumeSlider.value = _gameManager.volumeSettings;
+            volumeText.text = volumeSlider.value.ToString("F1");
+            
+            sensitivitySlider.value = _gameManager.sensitivitySettings;
+            sensitivityText.text = sensitivitySlider.value.ToString("F1");
+            
+            doorNameSwitch.value = _gameManager.defaultDoorNames ? 1 : 0;
         }
     }
 }

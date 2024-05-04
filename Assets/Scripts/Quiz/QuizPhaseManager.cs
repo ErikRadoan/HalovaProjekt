@@ -90,7 +90,6 @@ namespace Quiz
 
         void OnAnswerButtonClicked(string answer)
         {
-            Debug.Log(answer + " clicked" + currentQuizQuestion.correctAnswer);
             if (string.Equals(answer, currentQuizQuestion.correctAnswer, StringComparison.Ordinal))
             {
                 // The answer is correct, move to the next question
@@ -112,9 +111,6 @@ namespace Quiz
                 ServiceLocator.Get<GameManager>().DeductTime();
                 NewQuiz();
             }
-            
-            
-            
             
         }
         

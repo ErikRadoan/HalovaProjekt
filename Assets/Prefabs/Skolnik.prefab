@@ -84,7 +84,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &7071425526868492371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,16 +128,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4460407114078486235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 0.53154, y: 0.53154, z: 0.53154}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3883042147671238369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.059999943, y: -0.31999993}
+  m_SizeDelta: {x: -1.5761, y: 3.4525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5999080611720567709
 CanvasRenderer:
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 133d0c004d38cbc40a3d87096d779c05, type: 3}
+  m_Texture: {fileID: 2800000, guid: 0c487511c8ecdb743aae1ce346d9f06a, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 4019278610438833084}
   - component: {fileID: -8042734523231932079}
   - component: {fileID: 8286885426701668565}
+  - component: {fileID: 5267366675569964329}
   m_Layer: 0
   m_Name: Skolnik
   m_TagString: Untagged
@@ -323,7 +324,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 5
+  m_Intensity: 50
   m_Range: 200
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -534,3 +535,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.158032, y: 4.071319, z: 0.3844588}
   m_Center: {x: 0.4526498, y: 1.034292, z: 0.014192373}
+--- !u!114 &5267366675569964329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6275318096191130124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
